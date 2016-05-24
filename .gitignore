@@ -8,12 +8,6 @@ pids
 *.pid
 *.seed
 
-### Compiled binary addons (http://nodejs.org/api/addons.html)
-build/Release
-
-### Dependency directory
-node_modules
-
 ### Users Environment Variables
 .lock-wscript
 
@@ -27,15 +21,6 @@ hs_err_pid*
 *.DS_Store
 
 ### misc
-doc/
-docs/
-node_modules/
 .files/
 .idea/
-pkg/
-bin/
 
-files/elasticsearch/
-src/tmp-*
-src/github.com/
-src/golang.org/
