@@ -29,6 +29,6 @@ func RemoveAll(root string, files ...string) {
 
 func Open(t *testing.T, filename string) *os.File {
 	f, err := os.Open(filename)
-	NilError(t, err)
+	IsNil(t, err)
 	return f
 }
