@@ -1,0 +1,25 @@
+* Introduction
+** Overview
+~exam~ is a small set of convenience functions designed to help
+examine and assert values when writing test cases.
+** Installation
+
+#+BEGIN_SRC shell
+go get github.com/lcaballero/exam
+#+END_SRC
+
+** Usage
+
+
+   
+** License
+
+*** See license file.
+
+The use and distribution terms for this software are covered by the
+[[http://opensource.org/licenses/eclipse-1.0.txt][EPL-1]], which can be found in the file 'license' at the
+root of this distribution. By using this software in any fashion, you are
+agreeing to be bound by the terms of this license. You must not remove this
+notice, or any other, from this software.
+
+
