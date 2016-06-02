@@ -2,7 +2,6 @@ package assert
 
 
 func ShouldPanic(t Exam, fn func()) {
-	t.Log("Expecting panic error.")
 	defer func() {
 		t.Log("Expecting panic error.")
 		err := recover()
@@ -12,9 +11,9 @@ func ShouldPanic(t Exam, fn func()) {
 			t.Fail()
 		}
 	}()
-//	fn()
+	fn()
 	t.Log("Expected panic.")
-//	t.Fail()
+	t.Fail()
 }
 
 func ShouldNotPanic(t Exam, fn func()) {
