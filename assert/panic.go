@@ -1,9 +1,7 @@
 package assert
 
 func ShouldPanic(t Exam, fn func()) {
-	t.Log("Expecting panic error.")
 	defer func() {
-		t.Log("Expecting panic error.")
 		err := recover()
 		t.Log(err)
 		if err == nil {
@@ -11,9 +9,9 @@ func ShouldPanic(t Exam, fn func()) {
 			t.Fail()
 		}
 	}()
-	//	fn()
-	t.Log("Expected panic.")
-	//	t.Fail()
+	fn()
+	t.Log("Expecting panic.")
+	t.Fail()
 }
 
 func ShouldNotPanic(t Exam, fn func()) {
