@@ -5,9 +5,8 @@ func ToAny(args ...string) []interface{} {
 		return make([]interface{}, 0)
 	}
 	any := make([]interface{}, len(args))
-	for i,arg := range args {
+	for i, arg := range args {
 		any[i] = arg
 	}
 	return any
 }
-

@@ -1,6 +1,5 @@
 package assert
 
-
 type Exam interface {
 	Fail()
 	Log(args ...interface{})

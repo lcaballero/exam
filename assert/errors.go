@@ -2,8 +2,8 @@ package assert
 
 import (
 	"errors"
-	"reflect"
 	"fmt"
+	"reflect"
 )
 
 var ForTesting = errors.New("ForTesting")
@@ -30,7 +30,7 @@ func Is{{ .name }}(t Exam, err error, format string, args ...interface{}) {
 	}
 	t.Fail()
 }
- */
+*/
 
 func isNil(a interface{}) (isReallyNil bool) {
 	// Eliminates a string with characters '<nil>'
@@ -48,7 +48,6 @@ func isNil(a interface{}) (isReallyNil bool) {
 	}
 	return false
 }
-
 
 func IsNilf(t Exam, a interface{}, format string, args ...interface{}) {
 	if isNil(a) {

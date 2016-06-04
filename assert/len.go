@@ -1,6 +1,5 @@
 package assert
 
-
 type Lengthy interface {
 	Len() int
 }

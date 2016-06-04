@@ -1,7 +1,8 @@
 package assert
+
 import (
-	"testing"
 	"github.com/golang/mock/gomock"
+	"testing"
 )
 
 func Test_IsEqInt_Unequal(t *testing.T) {

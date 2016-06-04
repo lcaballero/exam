@@ -23,4 +23,3 @@ func IsEqFloat64f(t Exam, a, b float64, format string, msg ...interface{}) {
 func IsEqFloat64(t Exam, a, b float64, msg ...string) {
 	IsEqFloat64f(t, a, b, "", ToAny(msg...)...)
 }
-
