@@ -1,4 +1,5 @@
 package assert
+
 import (
 	"reflect"
 	"testing"
@@ -21,4 +22,3 @@ func IsNotEqFunc(t *testing.T, a, b interface{}) {
 		t.Fail()
 	}
 }
-

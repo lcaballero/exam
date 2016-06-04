@@ -1,8 +1,8 @@
 package assert
 
 import (
-	"testing"
 	"github.com/golang/mock/gomock"
+	"testing"
 )
 
 func TestError_Nil(t *testing.T) {
