@@ -31,6 +31,14 @@ func IsEmptyString(t Exam, a string) {
 	t.Fail()
 }
 
+func IsNotEmptyString(t Exam, a string) {
+	if a != "" {
+		return
+	}
+	t.Logf("'%s' != '' (%t)", a, a == "")
+	t.Fail()
+}
+
 func IsEqStrings(t Exam, a, b string) {
 	if a == b {
 		return
