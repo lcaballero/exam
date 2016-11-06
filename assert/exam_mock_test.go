@@ -36,6 +36,14 @@ func (_mr *_MockExamRecorder) Fail() *gomock.Call {
 	return _mr.mock.ctrl.RecordCall(_mr.mock, "Fail")
 }
 
+func (_m *MockExam) FailNow() {
+	_m.ctrl.Call(_m, "FailNow")
+}
+
+func (_mr *_MockExamRecorder) FailNow() *gomock.Call {
+	return _mr.mock.ctrl.RecordCall(_mr.mock, "FailNow")
+}
+
 func (_m *MockExam) Log(args ...interface{}) {
 	_s := []interface{}{}
 	for _, _x := range args {
