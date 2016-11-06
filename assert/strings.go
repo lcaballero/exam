@@ -5,6 +5,8 @@ import (
 	"testing"
 )
 
+// Contains asserts that the given string contains each of the
+// substrings.
 func Contains(t *testing.T, st string, subs ...string) {
 	for _, s := range subs {
 		if !strings.Contains(st, s) {
@@ -14,6 +16,8 @@ func Contains(t *testing.T, st string, subs ...string) {
 	}
 }
 
+// Excludes asserts that the given string does not contain any of
+// the substrings.
 func Excludes(t *testing.T, st string, subs ...string) {
 	for _, s := range subs {
 		if strings.Contains(st, s) {
@@ -23,6 +27,7 @@ func Excludes(t *testing.T, st string, subs ...string) {
 	}
 }
 
+// IsEmptyString asserts that the given string is empty.
 func IsEmptyString(t Exam, a string) {
 	if a == "" {
 		return
@@ -31,6 +36,7 @@ func IsEmptyString(t Exam, a string) {
 	t.Fail()
 }
 
+// IsNotEmptyString asserts that the given string is not empty.
 func IsNotEmptyString(t Exam, a string) {
 	if a != "" {
 		return
@@ -39,6 +45,7 @@ func IsNotEmptyString(t Exam, a string) {
 	t.Fail()
 }
 
+// IsEqStrings asserts the two strings are equal.
 func IsEqStrings(t Exam, a, b string) {
 	if a == b {
 		return

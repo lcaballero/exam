@@ -2,7 +2,7 @@ package assert
 
 import "testing"
 
-//IsTrue calls Fail() should the value of 'a' be false.
+// IsTrue calls Fail() should the value of 'a' be false.
 func IsTrue(t *testing.T, a bool) {
 	if a {
 		return
@@ -11,6 +11,7 @@ func IsTrue(t *testing.T, a bool) {
 	t.Fail()
 }
 
+// IsFalse checks that boolean value is actually false.
 func IsFalse(t *testing.T, a bool) {
 	if !a {
 		return

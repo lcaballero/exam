@@ -6,6 +6,7 @@ import (
 	"testing"
 )
 
+// FileExists checks that a file exists with the given filename.
 func FileExists(filename string) bool {
 	_, err := os.Stat(filename)
 	if os.IsNotExist(err) {
@@ -14,6 +15,7 @@ func FileExists(filename string) bool {
 	return true
 }
 
+// Exists checks that each of the files exist in the root directory.
 func Exists(t *testing.T, root string, files ...string) {
 	for _, file := range files {
 		dir := filepath.Join(root, file)
@@ -25,6 +27,7 @@ func Exists(t *testing.T, root string, files ...string) {
 	}
 }
 
+// RemoveAll removes all the files listed in the given root directory.
 func RemoveAll(root string, files ...string) {
 	for _, file := range files {
 		dir := filepath.Join(root, file)
@@ -36,6 +39,7 @@ func RemoveAll(root string, files ...string) {
 	}
 }
 
+// Open opens the given file and fails if the Open call produces an error.
 func Open(t *testing.T, filename string) *os.File {
 	f, err := os.Open(filename)
 	IsNil(t, err)

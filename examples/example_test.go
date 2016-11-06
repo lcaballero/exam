@@ -1,13 +1,11 @@
 package examples_test
 
 import (
-	"testing"
 	. "github.com/lcaballero/exam/assert"
+	"testing"
 )
 
-
-type mystruct struct {}
-
+type mystruct struct{}
 
 func Test_Example_1(t *testing.T) {
 	t.Logf("Here an example of the assert interface.")
@@ -32,7 +30,7 @@ func Test_Example_1(t *testing.T) {
 	t.Log("example of IsFalse")
 	IsFalse(t, n == 3)
 
-	a := []byte{ 'a', 'b', 'c' }
+	a := []byte{'a', 'b', 'c'}
 	b := []byte("abc")
 	t.Log("example of IsEqBytes")
 	IsEqBytes(t, a, b)
