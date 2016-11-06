@@ -1,12 +1,12 @@
 #+BEGIN_HTML
-<img src="https://goreportcard.com/badge/github.com/lcaballero/go-gh" 
-     tag="https://goreportcard.com/badge/github.com/lcaballero/go-gh" />
+<img src="https://goreportcard.com/badge/github.com/lcaballero/exam" 
+     tag="https://goreportcard.com/badge/github.com/lcaballero/exam" />
 
-<a href="https://godoc.org/github.com/lcaballero/go-gh">
-   <img src="https://godoc.org/github.com/lcaballero/go-gh?status.svg" alt="GoDoc"/>
+<a href="https://godoc.org/github.com/lcaballero/exam">
+   <img src="https://godoc.org/github.com/lcaballero/exam?status.svg" alt="GoDoc"/>
 </a>
 
-<img src="https://travis-ci.org/lcaballero/go-gh.svg?branch=master"/>
+<img src="https://travis-ci.org/lcaballero/exam.svg?branch=master"/>
 #+END_HTML
 
 
@@ -22,43 +22,44 @@ go get github.com/lcaballero/exam
 
 ** Usage
 
-*** IsZero(t, actual, expected)
+*** API
+
+**** IsZero(t, actual, expected)
 
 #+BEGIN_SRC go
 n := 0
 IsZero(t, n)
 #+END_SRC
 
-
-*** IsEqInt(t, actual, expected)
+**** IsEqInt(t, actual, expected)
 
 #+BEGIN_SRC go
 n := 1
 IsEqInt(t, n, 1)
 #+END_SRC
-
-*** GreaterThan(t, actual, expected)
+ 
+**** GreaterThan(t, actual, expected)
 
 #+BEGIN_SRC go
 n := 2
 GreaterThan(t, n, 1)
 #+END_SRC
 
-*** IsTrue(t, actual)
+**** IsTrue(t, actual)
 
 #+BEGIN_SRC go
 n := 3
 IsTrue(t, n == 3)
 #+END_SRC
 
-*** IsFalse(t, actual)
+**** IsFalse(t, actual)
 
 #+BEGIN_SRC go
 n := 4
 IsFalse(t, n == 3)
 #+END_SRC
 
-*** IsEqBytes(t, actual)
+**** IsEqBytes(t, actual)
 
 #+BEGIN_SRC go
 a := []byte{ 'a', 'b', 'c' }
@@ -66,7 +67,7 @@ b := []byte("abc")
 IsEqBytes(t, a, b)
 #+END_SRC
 
-*** IsEqByte(t, actual)
+**** IsEqByte(t, actual)
 
 #+BEGIN_SRC go
 a := []byte{ 'a', 'b', 'c' }
@@ -74,7 +75,7 @@ b := []byte("abc")
 IsEqByte(t, a[1], b[1])
 #+END_SRC
 
-*** IsNotNil(t, actual)
+**** IsNotNil(t, actual)
 
 #+BEGIN_SRC go
 type mystruct struct {}
@@ -82,14 +83,14 @@ my := &mystruct{}
 IsNotNil(t, my)
 #+END_SRC
 
-*** IsNil(t, actual)
+**** IsNil(t, actual)
 
 #+BEGIN_SRC go
 var my *mystruct
 IsNil(t, my)
 #+END_SRC
 
-*** ShouldPanic(t, fn)
+**** ShouldPanic(t, fn)
 
 #+BEGIN_SRC go
 willPanic := func() {
@@ -98,7 +99,7 @@ willPanic := func() {
 ShouldPanic(t, willPanic)
 #+END_SRC
 
-*** ShouldNotPanic(t, fn)
+**** ShouldNotPanic(t, fn)
 
 #+BEGIN_SRC go
 dontPanic := func() {
