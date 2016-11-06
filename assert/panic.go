@@ -1,11 +1,12 @@
 package assert
 
+// ShouldPanic asserts that the given function panics.
 func ShouldPanic(t Exam, fn func()) {
 	defer func() {
 		err := recover()
 		t.Log(err)
 		if err == nil {
-			t.Log("Expected panic occured.")
+			t.Log("Expected panic occurred.")
 			t.Fail()
 		}
 	}()
@@ -14,6 +15,7 @@ func ShouldPanic(t Exam, fn func()) {
 	t.Fail()
 }
 
+// ShouldNotPanic asserts that the given function does not panic.
 func ShouldNotPanic(t Exam, fn func()) {
 	defer func() {
 		err := recover()

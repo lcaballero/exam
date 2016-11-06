@@ -6,31 +6,9 @@ import (
 	"reflect"
 )
 
-var ForTesting = errors.New("ForTesting")
-
-/*
-Template:
-
-func Is{{ .name }}(t Exam, err error, format string, args ...interface{}) {
-	if err == nil {
-		return
-	}
-
-	hasFmt := HasFmt(format)
-	hasMsg := HasArgs(args...)
-
-	if hasFmt && hasMsg {
-		t.Logf("{{ .format }}", {{ .arg }}, AsFmt(format, args...))
-	} else if hasFmt && !hasMsg {
-		t.Logf("{{ .format }}", {{ .arg }}, format)
-	} else if !hasFmt && hasMsg {
-		t.Logf("{{ .format }}", {{ .arg }}, AsMsg(args...))
-	} else if !hasFmt && !hasMsg {
-		t.Logf("{{ .format }}", err)
-	}
-	t.Fail()
-}
-*/
+// ErrForTesting is for use in tests when a specific error can be
+// compared to or against.
+var ErrForTesting = errors.New("error for testing")
 
 func isNil(a interface{}) (isReallyNil bool) {
 	// Eliminates a string with characters '<nil>'
@@ -49,6 +27,8 @@ func isNil(a interface{}) (isReallyNil bool) {
 	return false
 }
 
+// IsNilf checks to determine if a is nil as well as concatenating the
+// format args.
 func IsNilf(t Exam, a interface{}, format string, args ...interface{}) {
 	if isNil(a) {
 		return
@@ -69,10 +49,12 @@ func IsNilf(t Exam, a interface{}, format string, args ...interface{}) {
 	t.Fail()
 }
 
+// IsNil passes if the value is nil (and passes otherwise).
 func IsNil(t Exam, a interface{}, args ...string) {
 	IsNilf(t, a, "", ToAny(args...)...)
 }
 
+// IsNotNilf passes if a is not nil along with the format interface.
 func IsNotNilf(t Exam, a interface{}, format string, args ...interface{}) {
 	if !isNil(a) {
 		return
@@ -93,6 +75,8 @@ func IsNotNilf(t Exam, a interface{}, format string, args ...interface{}) {
 	t.Fail()
 }
 
+// IsNotNil tests that the value is not nil and passes if that
+// condition is true.
 func IsNotNil(t Exam, a interface{}, args ...interface{}) {
 	IsNotNilf(t, a, "", args...)
 }

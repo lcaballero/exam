@@ -1,5 +1,6 @@
 package assert
 
+// ToAny changes string values to interface values.
 func ToAny(args ...string) []interface{} {
 	if args == nil || len(args) < 1 {
 		return make([]interface{}, 0)
