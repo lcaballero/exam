@@ -74,8 +74,7 @@ func IsNil(t Exam, a interface{}, args ...string) {
 }
 
 func IsNotNilf(t Exam, a interface{}, format string, args ...interface{}) {
-	v := reflect.ValueOf(a)
-	if v.IsValid() { // true when v is NOT the zero value.
+	if !isNil(a) {
 		return
 	}
 
@@ -83,17 +82,17 @@ func IsNotNilf(t Exam, a interface{}, format string, args ...interface{}) {
 	hasMsg := HasArgs(args...)
 
 	if hasFmt && hasMsg {
-		t.Logf("%s != nil (%t) %s", a, a != nil, AsFmt(format, args...))
+		t.Logf("%v != nil (%t) %s", a, a != nil, AsFmt(format, args...))
 	} else if hasFmt && !hasMsg {
-		t.Logf("%s != nil (%t) %s", a, a != nil, format)
+		t.Logf("%v != nil (%t) %s", a, a != nil, format)
 	} else if !hasFmt && hasMsg {
-		t.Logf("%s != nil (%t) %s", a, a != nil, AsMsg(args...))
+		t.Logf("%v != nil (%t) %s", a, a != nil, AsMsg(args...))
 	} else if !hasFmt && !hasMsg {
-		t.Logf("%s != nil (%t)", a, a != nil)
+		t.Logf("%v != nil (%t)", a, a != nil)
 	}
 	t.Fail()
 }
 
 func IsNotNil(t Exam, a interface{}, args ...interface{}) {
-	IsNotNilf(t, a, "", args)
+	IsNotNilf(t, a, "", args...)
 }
