@@ -11,6 +11,7 @@ import (
 var ErrForTesting = errors.New("error for testing")
 
 func isNil(a interface{}) (isReallyNil bool) {
+
 	// Eliminates a string with characters '<nil>'
 	_, ok := a.(string)
 	if ok {
@@ -21,7 +22,7 @@ func isNil(a interface{}) (isReallyNil bool) {
 		return true
 	}
 	v := reflect.ValueOf(a)
-	if v.IsNil() {
+	if v.IsNil() || a == nil {
 		return true
 	}
 	return false
